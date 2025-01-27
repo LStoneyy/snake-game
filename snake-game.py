@@ -1,7 +1,8 @@
 """This is a simple Snake-Clone made entirely in Python using the PyGame
 Library. The code is meant to be as simple as possible so that
 the game can be used as a selfstudy course for pupils of technology
-in German classrooms."""
+in German classrooms. It is based on the PyGame Documentation, which
+can be consulted on https://www.pygame.org/docs/"""
 
 # We first need to import the used modules, including PyGame
 import pygame
@@ -18,8 +19,11 @@ window_size_y = 480
     set a display with the mode of our intended window size and set
     a caption. """
 pygame.init()
-window = pygame.display.set_mode(window_size_x, window_size_y)
+window = pygame.display.set_mode((window_size_x, window_size_y))
+# size is the first argument, needs two parameters!
 pygame.display.set_caption("Snake Game - Python")
+
+# at this point, if you run the file, a window should appear
 
 """ To control the output Frames per Second, we need to
     initialise a clock controller."""
@@ -31,3 +35,16 @@ white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 0, 0)
 green = pygame.Color(0, 255, 0)
 blue = pygame.Color(0, 0, 255)
+
+""" To let the game run until you click to exit, we need to establish
+    an infinite loop until the exit condition is met. Here, we use 
+    a while loop for this, due to its easy conditionality with 
+    continue and break. """
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+
+    window.fill("black")
+    pygame.display.update()
+    fps_controller.tick(60)
