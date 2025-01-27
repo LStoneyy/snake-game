@@ -37,6 +37,23 @@ red = pygame.Color(255, 0, 0)
 green = pygame.Color(0, 255, 0)
 blue = pygame.Color(0, 0, 255)
 
+""" To create the snake, we use a list. In order to display the snake,
+    we need to know its length, its position and its size. In a
+    multidimensional list, these values can be stored, updated and
+    changed accordingly. """
+snake_position = [50, 50]
+snake_length = [[50, 50], [40, 50], [30, 50]]
+
+""" We also need to define the direction the snake is going.
+    We use a default value ("RIGHT") and a variable (direction_change)
+    to store the changed values. """
+direction = "RIGHT"
+direction_change = direction
+
+""" Lastly, we need a score that can be displayed somewhere. This is
+    a simple Integer. """
+score = 0
+
 """ To let the game run until you click to exit, we need to establish
     an infinite loop until the exit condition is met. Here, we use
     a while loop for this, due to its simple structure for an infinite loop.
