@@ -29,7 +29,8 @@ pygame.display.set_caption("Snake Game - Python")
     initialise a clock controller."""
 fps_controller = pygame.time.Clock()
 
-""" To display colors, we need to define them first, using RGB values. """
+""" To display colors, we need to define them first, using RGB values.
+    These are defined in a String using the PyGame Color class. """
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 0, 0)
@@ -37,13 +38,22 @@ green = pygame.Color(0, 255, 0)
 blue = pygame.Color(0, 0, 255)
 
 """ To let the game run until you click to exit, we need to establish
-    an infinite loop until the exit condition is met. Here, we use 
-    a while loop for this, due to its easy conditionality with 
-    continue and break. """
-while True:
-    for event in pygame.event.get():
+    an infinite loop until the exit condition is met. Here, we use
+    a while loop for this, due to its simple structure for an infinite loop.
+    """
+
+while True:  # starting the infinite loop
+    for event in pygame.event.get():  # pygame.event.get() fetches the e
         if event.type == pygame.QUIT:
             pygame.quit()
+            sys.exit()
+
+    """ Uncomment the following to see if you set up everything correctly
+        You should see a black window, which you can quit by closing it. """
+
+    # window.fill("black")
+    # pygame.display.update()
+    # fps_controller.tick(60)
 
     window.fill("black")
     pygame.display.update()
